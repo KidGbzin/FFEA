@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Fatal Force: Earth Assault"
-run/main_scene="res://Scripts/Character.tscn"
+run/main_scene="res://Scenes/Character.tscn"
 config/icon="res://icon.png"
 
 [physics]

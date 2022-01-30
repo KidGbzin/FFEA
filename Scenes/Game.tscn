@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/The Wasteland.tres" type="TileSet" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 7 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 48, 7 )
+
+[node name="Game" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Decoration Tile" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -65533, 3, 0, -65530, 3, 0, 3, 3, 0, 6, 3, 0, 65539, 3, 0, 65542, 3, 0, 131075, 3, 0, 131078, 3, 0, 196611, 3, 0, 196614, 3, 0, 262147, 3, 0, 262150, 3, 0, 327683, 3, 0, 327686, 3, 0, 393219, 3, 0, 393222, 3, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collision Tile" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 0, 13, 0, 65536, 13, 0, 65538, 10, 0, 65539, 11, 0, 65540, 11, 0, 65541, 11, 0, 65542, 11, 0, 65543, 2, 0, 131072, 13, 0, 196608, 13, 0, 262144, 13, 0, 262146, 10, 0, 262147, 11, 0, 262148, 11, 0, 262149, 11, 0, 262150, 11, 0, 262151, 2, 0, 327680, 13, 0, 393216, 13, 0, 393227, 12, 0, 393228, 5, 0, 393229, 6, 0, 393230, 7, 0, 458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 1, 0, 458763, 1, 0, 458764, 4, 0, 458765, 0, 0, 458766, 8, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 9, 0, 524303, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Static Plataform" type="StaticBody2D" parent="Collision Tile"]
+position = Vector2( 80, 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collision 0" type="CollisionShape2D" parent="Collision Tile/Static Plataform"]
+position = Vector2( 0, 1 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collision 1" type="CollisionShape2D" parent="Collision Tile/Static Plataform"]
+position = Vector2( 0, 49 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
